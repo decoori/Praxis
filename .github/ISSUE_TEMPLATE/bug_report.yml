@@ -1,0 +1,74 @@
+name: Bug report
+description: Сообщить о воспроизводимой ошибке в приложении
+title: "[bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за отчёт. Не прикладывайте скриншоты с чужими никами и данными,
+        а также ключи и файлы `env.json`.
+
+        Уязвимости не описывайте здесь — см. SECURITY.md.
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Шаги воспроизведения
+      description: Что вы сделали, чтобы ошибка повторилась
+      placeholder: |
+        1. Открыть вкладку «Квесты»
+        2. Нажать «Новая цель»
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидаемое поведение
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Фактическое поведение
+      description: Текст ошибки, код ответа, скриншот без персональных данных
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Версия приложения
+      description: Например, 1.0.0+1 (видна в профиле или в сборке)
+    validations:
+      required: true
+
+  - type: input
+    id: platform
+    attributes:
+      label: Платформа
+      description: Android/iOS/Web, версия ОС, модель устройства
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Логи
+      description: Вывод `flutter run` или `adb logcat` без ключей и токенов
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Проверки
+      options:
+        - label: Я поискал похожий issue и не нашёл
+          required: true
+        - label: В отчёте нет ключей, токенов и персональных данных
+          required: true

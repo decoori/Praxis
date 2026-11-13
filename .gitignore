@@ -1,0 +1,107 @@
+# ---------------------------------------------------------------------------
+# PRAXIS — .gitignore
+#
+# Правило: в репозиторий не попадают артефакты сборки, локальные настройки
+# IDE, ключи подписи, реальные ключи Supabase и разовые выгрузки кода.
+# ---------------------------------------------------------------------------
+
+# --- Секреты и локальная конфигурация ---------------------------------------
+# Реальные значения Supabase и backend: шаблон лежит в env.example.json.
+env.json
+.env
+.env.*
+!.env.example
+
+# Ключ подписи Android. Потеря ключа = невозможность обновить приложение.
+android/key.properties
+android/*.jks
+android/*.keystore
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+
+# Токен аккаунта Telegraph: даёт право править опубликованную статью.
+.telegraph_state.json
+docs/.telegraph_state.json
+
+# --- Flutter / Dart ---------------------------------------------------------
+.dart_tool/
+.pub-cache/
+.pub/
+/build/
+/coverage/
+.doc/api/
+**/doc/api/
+.flutter-plugins
+.flutter-plugins-dependencies
+app.*.symbols
+app.*.map.json
+
+# --- Разовые выгрузки и резервные копии -------------------------------------
+# tool/bundle_code.dart собирает весь код в один файл для ревью.
+project_code.txt
+*.bak
+*.orig
+*.rej
+
+# --- Python (скрипты в tool/) ----------------------------------------------
+__pycache__/
+*.py[cod]
+
+# --- IDE и редакторы --------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+.fleet/
+*.sublime-project
+*.sublime-workspace
+.history
+# .vscode/ — раскомментируйте, если хотите хранить общие launch-конфиги.
+#.vscode/
+
+# --- Операционные системы ---------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.log
+
+# --- Android ----------------------------------------------------------------
+android/local.properties
+android/.gradle/
+android/.kotlin/
+android/.cxx/
+android/captures/
+android/app/build/
+android/build/
+android/app/debug/
+android/app/profile/
+android/app/release/
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+
+# --- iOS / macOS ------------------------------------------------------------
+**/Pods/
+**/.symlinks/
+**/xcuserdata/
+**/DerivedData/
+**/dgph
+ios/Flutter/ephemeral/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/.last_build_id
+ios/Runner/GeneratedPluginRegistrant.*
+macos/Flutter/ephemeral/
+macos/Runner/GeneratedPluginRegistrant.*
+
+# --- Windows / Linux --------------------------------------------------------
+windows/flutter/ephemeral/
+windows/x64/
+windows/x86/
+linux/flutter/ephemeral/
+
+# --- Прочее -----------------------------------------------------------------
+*.class
+*.pyc

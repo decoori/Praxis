@@ -1,0 +1,29 @@
+# Единые переводы строк в репозитории, чтобы диффы не зависели от ОС.
+* text=auto eol=lf
+
+# Скрипты Windows должны остаться с CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Бинарные файлы: Git не должен их нормализовать.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.jar binary
+*.jks binary
+*.keystore binary
+*.apk binary
+*.aab binary
+*.zip binary
+
+# Скриншоты и логотип в документации не считаем текстом.
+docs/screenshots/* binary
+branding/**/*.png binary
+assets/*.png binary
